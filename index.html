@@ -61,7 +61,22 @@
         /* Long text wrapping */
         .break-words { overflow-wrap: anywhere; word-break: break-word; }
   
-        /* -------- Figure reference superscripts -------- */
+        /* -------- 
+        /* -------- Reference-style ordered list: [1] [2] ... -------- */
+        ol.ref-list { list-style: none; counter-reset: refitem; padding-left: 0; margin: 0; }
+        ol.ref-list > li { position: relative; padding-left: 2.2rem; }
+        ol.ref-list > li::before {
+          counter-increment: refitem;
+          content: "[" counter(refitem) "]";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1.8rem;
+          text-align: right;
+          color: #9ca3af;
+          font-weight: 600;
+        }
+        /*------- Figure reference superscripts -------- */
         .fig-ref-sup { font-size: 0.75em; vertical-align: super; color: #006439; margin-left: 0.25rem; }
         .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 9999px; border: 1px solid #e5e7eb; background: rgba(255,255,255,0.9); transition: transform 120ms ease, background 120ms ease; }
         .icon-btn-lg { width: 52px; height: 52px; }
@@ -156,7 +171,12 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
     <header class="relative h-[500px] flex items-center justify-center bg-gray-900 text-white pt-20">
       <div class="absolute inset-0 bg-gradient-to-r from-green-900 to-black opacity-80 z-10">
       </div>
-      <img alt="科技背景" class="absolute inset-0 w-full h-full object-cover z-0" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80"/>
+      <!-- Header background: three gate images (replace the src paths with your school gate photos) -->
+      <div class="absolute inset-0 z-0 grid grid-cols-3 gap-px bg-black/20">
+        <img alt="校门 1（可替换）" class="w-full h-full object-cover" src="site_assets/images/gate_3.png"/>
+        <img alt="校门 2（可替换）" class="w-full h-full object-cover" src="site_assets/images/gate_2.png"/>
+        <img alt="校门 3（可替换）" class="w-full h-full object-cover" src="site_assets/images/gate_1.png"/>
+      </div>
       <div class="relative z-20 text-center container px-6">
         <span class="bg-bit-green px-3 py-1 text-sm rounded uppercase tracking-wider mb-4 inline-block">
           国家自然科学基金｜区域创新发展联合基金｜重点支持项目
@@ -267,7 +287,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Jiahui Sun; Haiming Jin; Zhaoxing Yang; Lu Su; Xinbing Wang; Optimizing Long-Term Efficiency and Fairness in Ride-Hailing via Joint Order Dispatching and Driver Repositioning, ACM SIGKDD 2022, Washington, DC, USA, 2022-8-14至2022-8-18. 第一标注 </li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Guiyun Fan; Haiming Jin; Yiran Zhao; Yiwen Song; Xiaoying Gan; Jiaxin Ding; Lu Su; Xinbing Wang; Joint Order Dispatch and Charging for Electric Self-Driving Taxi Systems, IEEE INFOCOM 2022, Virtual Conference, 2022-5-2至2022-5-5. EI. 第一标注</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Haoyi You; Beichen Yu; Haiming Jin; Zhaoxing Yang; Jiahui Sun; User-Oriented Robust Reinforcement Learning, AAAI 2023, Washington DC, USA, 2023-2-7至2023-2-14. 第一标注</li>
@@ -310,7 +330,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Jiahui Sun; Haiming Jin; Zhaoxing Yang; Lu Su; Optimizing Long-Term Efficiency and Fairness in Ride-Hailing under Budget Constraint via Joint Order Dispatching and Driver Repositioning, IEEE Transactions on Knowledge and Data Engineering, 2024, 36(7)：1-14. SCIE. 第一标注</li>
                         <li class="break-words">Jiahui Sun; Guiyun Fan; Haiming Jin; Yiwen Song; Tianyuan Liu; Chenhao Ying; Yuan Luo; Jie Li; Multi-Task-Oriented UAV Crowd Sensing with Charging Budget Constraint, ACM MOBIHOC 2024, Athens, Greece, 2024-10-14至2024-10-17. EI. 第一标注</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Zhangxing Yang; Haiming Jin; Guiyun Fan; Min Lu; Yiran Liu; Xinlang Yue; Hao Pan; Zhe Xu; Guobin Wu;Qun Li; Xiaotong Wang; Jiecheng Guo; Rethinking Order Dispatching in Online Ride-Hailing Platforms, ACM SIGKDD 2024, Barcelona, Spain, 2024-8-25至2024-8-29. EI. 第一标注</li>
@@ -363,7 +383,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong>  Binhui Xie, Longhui Yuan, Shuang Li, Chi Harold Liu, Xinjing Cheng.Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),  2022: 8058-8068.</li>
                         <li class="break-words"> 叶语霄; 刘驰; 王昊，一种保障元宇宙应用信息质量的无人群体感知方法，授权号：CN117221829A，授权日期：2023.12.12.</li>
                       </ol>
@@ -403,7 +423,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Fangrui Lv,Jian Liang, Shuang Li, Bin Zang, Chi Harold Liu, Ziteng Wang, Di Liu. Causality Inspired Representation Learning for Domain Generalization. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022: 8036-8046.</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Yuxiao Ye, Chi Harold Liu, Zipeng Dai, Jianxin Zhao, Ye Yuan, Guoren Wang, Jian Tang. Exploring both Individuality and Cooperation for Air-Ground Spatial Crowdsourcing by Multi-Agent Deep Reinforcement Learning. IEEE International Conference on Data Engineering (ICDE), 2023: 205-217.</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Yu Wang, Jingfei Wu, Xingyuan Hua, Chi Harold Liu, Guozheng Li, Jianxin Zhao, Ye Yuan, Guoren Wang. Air-Ground Collaborative Spatial Crowdsourcing with UAV Carriers by Geometric Graph Convolutional Multi-Agent Deep Reinforcement Learning. IEEE International Conference on Data Engineering (ICDE), 2023: 1790-1802.</li>
@@ -456,7 +476,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words">论文｜ACM TMC 2025《BIT-FL: A Device Matching and Multi-Objective Optimization Based Federated Learning Framework》。</li>
 <li class="break-words">论文｜IEEE TITS 2023《Participant Selection for Federated Learning with Heterogeneous Data and Limited Resource》。</li>
                       </ol>
@@ -496,7 +516,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"> Mengyao Fu; Zhiqiang Ma; Chenyang Gao; Yongping Ye; Wei Li; Dibo Hou; Yunqi Cao. A Multi-Functional VOC Sensor Based on Cascaded Quartz Crystal Resonators, IEEE Electron Device Letters, 2025, 46(3): 476-479.</li>
                         <li class="break-words"> Yunqi Cao; Mengyao Fu; Shuyu Fan; Chenyang Gao; Zhiqiang Ma; Dibo Hou; Hydrophobic MOF/PDMS-Based QCM Sensors for VOCs Identification and Quantitative Detection in High-Humidity Environments, ACS Applied Materials & Interfaces, 2024, 16(6): 7721–7731.</li>
                       </ol>
@@ -546,7 +566,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"> Mengyao Fu; Zhiqiang Ma; Chenyang Gao; Yi Shen; Xiaoyan Song; Dibo Hou; Yunqi Cao. Detection of Volatile Organic Compounds and Their Mixtures Using an E-nose with Cascaded QCM-based Multi-Virtual Sensor Array, Measurement Science and Technology, 2025, 36, 115109.</li>
                         <li class="break-words"> Chenyang Gao; Mengyao Fu; Shuyu Fan; Zhiqiang Ma; Yongkui Tang; Dibo Hou; Yunqi Cao. High-performance virtual sensors array based on a single-chip FBAR for volatile organic compounds (VOCs) detection and classification, Sensors and Actuators:B. Chemical, 2025, 422: 136687.</li>
                       </ol>
@@ -586,7 +606,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   </h4>
                   <ul class="text-sm text-gray-700 space-y-4 leading-relaxed">
                     <li>
-                      <ol class="mt-2 list-decimal pl-5 space-y-2">
+                      <ol class="mt-2 ref-list pl-0 space-y-2">
                         <li class="break-words"> Jiahui Sun; Guiyun Fan; Haiming Jin; Yiwen Song; Tianyuan Liu; Chenhao Ying; Yuan Luo; Jie Li; Multi-Task-Oriented UAV Crowd Sensing with Charging Budget Constraint, ACM MOBIHOC 2024, Athens, Greece, 2024-10-14至2024-10-17. EI. 第一标注</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Chenhao Ying; Fuyuan Xia; David S. L. Wei; Xinchun Yu; Yibin Xu; Weiting Zhang; Xikun Jiang; Haiming Jin; Yuan Luo; Tao Zhang; Dacheng Tao; BIT-FL: Blockchain-Enabled Incentivized and Secure Federated Learning Framework, ACM Transactions on Mobile Computing, 2025, 24(2)：1212-1229. SCIE, EI. 第三标注</li>
                         <li class="break-words"><strong class="font-semibold text-gray-900">(CCF-A)</strong> Yu Wang; Jingfei Wu; Xingyuan Hua; Chi Harold Liu; Guozheng Li; Jianxin Zhao; Ye Yuan; Guoren Wang; Air-Ground Collaborative Spatial Crowdsourcing with UAV Carriers by Geometric Graph Convolutional Multi-Agent Deep Reinforcement Learning, IEEE ICDE 2023, Anaheim, CA, 2023-4-3至2023-4-7. EI. 第一标注</li>
@@ -780,32 +800,20 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
 
               <div class="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col" style="height: 520px;">
                 <div class="p-5 border-b border-gray-100 bg-gray-50/50 shrink-0">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">博士后</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">教师与团队建设</h3>
                 </div>
                 <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="talent-postdoc-list">
-<div class="space-y-5">
-  <div class="rounded-lg border border-gray-100 bg-gray-50/60 p-4">
-    <div class="text-sm font-semibold text-gray-900 mb-3">教师与团队建设</div>
-    <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
-      <li>北京理工大学刘驰教授入选为2025年长江学者特聘教授，2026年度IEEE Fellow，入选全球前2%顶尖科学家榜单（终身科学影响力榜单、年度科学影响力榜单）、爱思唯尔中国高被引科学家。 （长江学者特聘教授，IEEE Fellow, 爱思唯尔中国高被引）</li>
-      <li>北京理工大学刘驰教授指导项目“城市环境无人群体空地协同感知技术与仿真平台”（参与学生：叶语霄、刘嘉辉、焦鹏屹）获2022年“中国高校计算机大赛——人工智能创意赛”全国总决赛特等奖。</li>
-      <li>上海交通大学金海明于2025年晋升为长聘副教授，2022年-2025年连续4年入选全球前2%顶尖科学家榜单，于2024年获中国指挥与控制学会科学技术进步奖（技术发明类）一等奖（第5完成人）。</li>
-      <li>上海交通大学向立瑶于2024年晋升为长聘副教授，获2024年ACM中国上海新星奖。</li>
-      <li>上海交通大学叶南阳获2022年ACM中国上海新星奖。</li>
-      <li>浙江大学曹云琦教授指导项目“面向白酒检测的射频式机器嗅觉（电子鼻）系统”（参与学生：毕研成、傅梦瑶、马志强、高晨阳、付逸飞）获第九届中国（国际）传感器创新创业大赛决赛高校组创新应用类三等奖。</li>
-      <li>浙江大学曹云琦教授指导项目“'Micro-SmartCar'面向大型动力设备的微型智能检修机器人”（参与学生：于浩洋、洪德隆、付逸飞）获2025年中国大学生智能装备创新设计大赛(区域赛)一等奖。</li>
-      <li>浙江大学曹云琦教授指导项目“基于自感知密封垫片的螺栓法兰密封状态智能监测系统”（参与学生：付逸飞、洪德隆、于浩洋）获2025年中国大学生智能装备创新设计大赛(区域赛)一等奖。</li>
-    </ol>
-  </div>
-
-  <div>
-    <div class="text-sm font-semibold text-gray-900 mb-3">博士后培养</div>
-    <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
-      <li>培养上海交通大学博士后范桂云，在站期间获得国自然青年基金资助，出站后赴同济大学任助理教授。</li>
-    </ol>
-  </div>
-</div>
-</div>
+                  <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
+                    <li>北京理工大学刘驰教授入选为2025年长江学者特聘教授，2026年度IEEE Fellow，入选全球前2%顶尖科学家榜单（终身科学影响力榜单、年度科学影响力榜单）、爱思唯尔中国高被引科学家。 （长江学者特聘教授，IEEE Fellow, 爱思唯尔中国高被引）</li>
+                    <li>北京理工大学刘驰教授指导项目“城市环境无人群体空地协同感知技术与仿真平台”（参与学生：叶语霄、刘嘉辉、焦鹏屹）获2022年“中国高校计算机大赛——人工智能创意赛”全国总决赛特等奖。</li>
+                    <li>上海交通大学金海明于2025年晋升为长聘副教授，2022年-2025年连续4年入选全球前2%顶尖科学家榜单，于2024年获中国指挥与控制学会科学技术进步奖（技术发明类）一等奖（第5完成人）。</li>
+                    <li>上海交通大学向立瑶于2024年晋升为长聘副教授，获2024年ACM中国上海新星奖。</li>
+                    <li>上海交通大学叶南阳获2022年ACM中国上海新星奖。</li>
+                    <li>浙江大学曹云琦教授指导项目“面向白酒检测的射频式机器嗅觉（电子鼻）系统”（参与学生：毕研成、傅梦瑶、马志强、高晨阳、付逸飞）获第九届中国（国际）传感器创新创业大赛决赛高校组创新应用类三等奖。</li>
+                    <li>浙江大学曹云琦教授指导项目“'Micro-SmartCar'面向大型动力设备的微型智能检修机器人”（参与学生：于浩洋、洪德隆、付逸飞）获2025年中国大学生智能装备创新设计大赛(区域赛)一等奖。</li>
+                    <li>浙江大学曹云琦教授指导项目“基于自感知密封垫片的螺栓法兰密封状态智能监测系统”（参与学生：付逸飞、洪德隆、于浩洋）获2025年中国大学生智能装备创新设计大赛(区域赛)一等奖。</li>
+                  </ol>
+                </div>
               </div>
             </div>
 
@@ -825,22 +833,34 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                   <h3 class="text-xl font-bold text-gray-900 mb-3">博士</h3>
                 </div>
                 <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="talent-phd-list">
-<ol class="list-decimal pl-5 space-y-3 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
-  <li>培养北京理工大学博士研究生谢斌辉，获得2024年北京理工大学“优秀博士学位论文育苗基金”、2023年博士研究生国家奖学金，毕业后赴腾讯就业。</li>
-<li>培养北京理工大学博士研究生赵一诺，获得ICLR 2022国际比赛“Generalizable Policy Learning in the Physical World”第一名、2020年硕士研究生国家奖学金，毕业后赴香港城市大学进站从事博士后研究。</li>
-<li>培养上海交通大学博士研究生杨兆星，于2024年获得国家奖学金。</li>
-<li>培养上海交通大学博士研究生丁榕，于2021-2025年获得吴文俊人工智能荣誉博士奖学金。</li>
-<li>培育上海交通大学博士研究生孙嘉徽，毕业后赴中国移动研究院就业。</li>
-<li>培养上海交通大学博士研究生欧俊杰，毕业后赴百度就业。</li>
-<li>培养上海交通大学博士研究生朱一晨，毕业后赴华为就业。</li>
-<li>培养浙江大学博士研究生周禹杉，获CSC资助前往南洋理工大学交流。</li>
-<li>培养浙江大学博士研究生高晨阳，获2025年国家奖学金。</li>
-<li>培养浙江大学博士研究生范舒羽，获得2024年浙江大学优秀博士生资助项目。</li>
-<li>培养浙江大学博士研究生池豪镇，毕业后赴浙江科技大学担任讲师。</li>
-<li>培养浙江大学博士研究生傅梦瑶，毕业后赴中国移动杭州研发中心就业。</li>
-<li>培养浙江大学博士研究生马志强、单绮玮。</li>
-</ol>
-</div>
+                  <div class="space-y-5">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50/60 p-4">
+                      <div class="text-sm font-semibold text-gray-900 mb-3">博士后</div>
+                        <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
+                          <li>培养上海交通大学博士后范桂云，在站期间获得国自然青年基金资助，出站后赴同济大学任助理教授。</li>
+                        </ol>
+                    </div>
+
+                    <div class="rounded-lg border border-gray-100 bg-gray-50/60 p-4">
+                      <div class="text-sm font-semibold text-gray-900 mb-3">博士研究生</div>
+                        <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
+                          <li>培养北京理工大学博士研究生谢斌辉，获得2024年北京理工大学“优秀博士学位论文育苗基金”、2023年博士研究生国家奖学金，毕业后赴腾讯就业。</li>
+                          <li>培养北京理工大学博士研究生赵一诺，获得ICLR 2022国际比赛“Generalizable Policy Learning in the Physical World”第一名、2020年硕士研究生国家奖学金，毕业后赴香港城市大学进站从事博士后研究。</li>
+                          <li>培养上海交通大学博士研究生杨兆星，于2024年获得国家奖学金。</li>
+                          <li>培养上海交通大学博士研究生丁榕，于2021-2025年获得吴文俊人工智能荣誉博士奖学金。</li>
+                          <li>培育上海交通大学博士研究生孙嘉徽，毕业后赴中国移动研究院就业。</li>
+                          <li>培养上海交通大学博士研究生欧俊杰，毕业后赴百度就业。</li>
+                          <li>培养上海交通大学博士研究生朱一晨，毕业后赴华为就业。</li>
+                          <li>培养浙江大学博士研究生周禹杉，获CSC资助前往南洋理工大学交流。</li>
+                          <li>培养浙江大学博士研究生高晨阳，获2025年国家奖学金。</li>
+                          <li>培养浙江大学博士研究生范舒羽，获得2024年浙江大学优秀博士生资助项目。</li>
+                          <li>培养浙江大学博士研究生池豪镇，毕业后赴浙江科技大学担任讲师。</li>
+                          <li>培养浙江大学博士研究生傅梦瑶，毕业后赴中国移动杭州研发中心就业。</li>
+                          <li>培养浙江大学博士研究生马志强、单绮玮。</li>
+                        </ol>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
