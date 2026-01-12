@@ -45,20 +45,20 @@
             background: #94a3b8;
         }
 
-        /* Sticky headers within the paper list */
+        /* Venue headers within the paper list (not sticky; scrolls with content) */
         .sticky-venue-header {
-            position: sticky;
-            top: 0;
-            background-color: #f9fafb; /* match bg-gray-50/white context */
-            backdrop-filter: blur(8px);
-            background-color: rgba(255, 255, 255, 0.95);
-            z-index: 10;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            position: relative; /* keep in normal flow */
+            top: auto;
+            backdrop-filter: none;
+            background-color: transparent;
+            z-index: auto;
+            padding-top: 0.35rem;
+            padding-bottom: 0.35rem;
+            margin-top: 0.25rem;
             border-bottom: 1px solid #e5e7eb;
         }
 
-        /* Long text wrapping */
+/* Long text wrapping */
         .break-words { overflow-wrap: anywhere; word-break: break-word; }
   
         /* -------- 
@@ -1437,16 +1437,16 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
 
             // List Items
             const ol = document.createElement('ol');
-            ol.className = "space-y-3 mt-2 mb-6 pl-2";
+            // Use native ordered-list markers for a more standard 1, 2, 3 numbering presentation
+            ol.className = "list-decimal pl-6 space-y-3 mt-2 mb-6 marker:text-gray-400";
 
-            items.forEach((it, idx) => {
+            items.forEach((it) => {
                 const li = document.createElement('li');
-                li.className = "text-sm text-gray-600 leading-relaxed border-b border-gray-50 pb-2 last:border-0 break-words flex gap-2";
-                li.innerHTML = `<span class="font-mono text-gray-400 select-none">${idx + 1}.</span>
-                                <span>${formatPaperText(it)}</span>`;
+                li.className = "text-sm text-gray-600 leading-relaxed border-b border-gray-50 pb-2 last:border-0 break-words";
+                li.innerHTML = formatPaperText(it);
                 ol.appendChild(li);
             });
-            groupDiv.appendChild(ol);
+groupDiv.appendChild(ol);
             sectionWrapper.appendChild(groupDiv);
         });
 
